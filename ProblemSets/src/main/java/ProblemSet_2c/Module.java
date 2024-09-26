@@ -16,4 +16,10 @@ public class Module
 	public double calculateAverage() {
 		return ((assessment1.getMark() + assessment2.getMark() + assessment3.getMark()) / 3);
 	}
+	
+	
+	public String toString()
+	{
+		return "COM1027 (" + (((assessment1.getMark() + assessment2.getMark() + assessment3.getMark()) / 3) + "%)");
+	}
 }
