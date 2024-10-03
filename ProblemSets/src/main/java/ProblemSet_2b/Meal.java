@@ -1,7 +1,5 @@
 package ProblemSet_2b;
 
-import java.util.List; // Only import the used class
-
 public class Meal {
     private Food food1;
     private Food food2;

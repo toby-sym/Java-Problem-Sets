@@ -3,6 +3,9 @@ package ProblemSet_3b;
 public class AnnualSalary
 {
 	private int salary;
+	private double tax;
+
+	
 	
 	public AnnualSalary()
 	{
@@ -11,24 +14,36 @@ public class AnnualSalary
 	
 	public double calculateTax()
 	{
-		if (salary <=12570)
+		
+		if (salary <= 12570)
 		{
-			return 0.0;
+			tax = 0.0;
 		}
 		
-		else if (salary <= 50270)
+		if (salary > 12570 && salary <= 50270)
 		{
-			return ((salary-12570) * 0.80 + 12570);
+			tax = (salary - 12570) * 0.2;
 		}
-		return salary;
+		
+		if (salary > 50270 && salary <= 125140)
+		{
+			tax = (salary - 50270) * 0.4 + (50270 - 12570) * 0.2;
+		}
+		
+		if (salary > 125140)
+		{
+			tax = (salary - 125140) * 0.45 + (125140 - 50270) * 0.4 + (50270 - 12570) * 0.2;
+		}
+		
+		return tax;
 	}
 	
 	public void setSalary(int inpsalary)
 	{
-		salary = inpsalary;
+		salary = inpsalary;	
 	}
 	
-	public int getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
