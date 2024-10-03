@@ -18,7 +18,7 @@ public class Employee
 		this.employeePosition = employeePosition;
 	}
 	
-	public int getID()
+	public int getId()
 	{
 		return employeeID;
 	}
@@ -33,18 +33,38 @@ public class Employee
 		return employeeSurname;
 	}
 	
-	public AnnualSalary getSalary()
+	public int getSalary()
 	{
-		return employeeSalary;
+		return (int) employeeSalary.getSalary();
 	}
 	
-	public Position getPositionName()
+	public String getPositionName()
 	{
-		return employeePosition;
+		return (String) employeePosition.getRoleName();
+	}
+	
+	public boolean eligibleForBonus()
+	{
+		if (employeeSalary.getSalary() > 40000)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public String toString()
 	{
-		return (employeeSurname + ", " + employeeForename + " (" + employeeID + "): " + employeePosition.getRoleName() + " at £" + employeeSalary.getSalary() +" (£" + employeeSalary.calculateTax() + " tax) and is not eligible for bonus.");
+		if (this.eligibleForBonus() == true)
+		{
+			return (employeeSurname + ", " + employeeForename + " (" + employeeID + "): " + employeePosition.getRoleName() + " at £" + employeeSalary.getSalary() +" (£" + employeeSalary.calculateTax() + " tax) and is eligible for bonus.");
+		}
+		else
+		{
+			return (employeeSurname + ", " + employeeForename + " (" + employeeID + "): " + employeePosition.getRoleName() + " at £" + employeeSalary.getSalary() +" (£" + employeeSalary.calculateTax() + " tax) and is not eligible for bonus.");
+
+		}
 	}
 }

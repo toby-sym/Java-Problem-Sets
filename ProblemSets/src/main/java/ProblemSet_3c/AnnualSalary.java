@@ -2,7 +2,7 @@ package ProblemSet_3c;
 
 public class AnnualSalary
 {
-	private int salary;
+	private double salary;
 	private double tax;
 
 	
@@ -38,7 +38,7 @@ public class AnnualSalary
 		return tax;
 	}
 	
-	public void setSalary(int inpsalary)
+	public void setSalary(double inpsalary)
 	{
 		salary = inpsalary;	
 	}
