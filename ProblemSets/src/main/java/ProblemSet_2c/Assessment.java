@@ -18,6 +18,21 @@ public class Assessment
 	
 	public double getMark()
 	{
+		if (testname == "Labs1")
+			{
+				courseweight = courseweight * 0.2;
+			}
+		
+		if (testname == "Labs2")
+			{
+				courseweight = courseweight * 0.2;
+			}
+		
+		if (testname == "Coursework")
+			{
+				courseweight = courseweight * 0.6;
+			}
+		
 		return courseweight;
 	}
 }
