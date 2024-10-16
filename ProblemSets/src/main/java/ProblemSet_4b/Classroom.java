@@ -4,40 +4,19 @@ public class Classroom
 {
 	private String classroomName;
 	private int classroomCapacity;
-	private int[] studentIndex;
-	private char[] studentFirstInitial;
-	private String[] studentSurname;
-	
-	private String summativeList;
-	
+	private char[] studentInitials;
+	private String[] studentSurnames;
+	private int studentCount;
+		
 	public Classroom(String classroomName)
 	{
 		this.classroomName = classroomName;
+	    this.classroomCapacity = 20;
+		this.studentInitials = new char[classroomCapacity];
+        this.studentSurnames = new String[classroomCapacity];
+        this.studentCount = 0;
 	}
-	
-	
-	public void addStudents(int inpstudentIndex, char inpstudentFirstInitial, String inpstudentSurname)
-	{
-		studentIndex[inpstudentIndex] = inpstudentIndex;
-		studentFirstInitial[inpstudentIndex] = inpstudentFirstInitial;
-		studentSurname[inpstudentIndex] = inpstudentSurname;
-	}
-	
-	public String getSummary()
-	{
-		for (int i : studentIndex)
-		{
-			summativeList += (studentFirstInitial[i] + ". " + studentSurname[i] + "/n");
-		}
-		
-		return summativeList;
-	}
-	
-	public int howManyStudents()
-	{
-		return studentSurname.length;
-	}
-	
+
 	public String getRoom()
 	{
 		return classroomName;
@@ -47,4 +26,35 @@ public class Classroom
 	{
 		return classroomCapacity;
 	}
+	
+    public void addStudents(int index, char studentInitial, String studentSurname)
+    {
+        if (index >= 0 && index < studentInitials.length)
+        {
+            studentInitials[index] = studentInitial;
+            studentSurnames[index] = studentSurname;
+            studentCount += 1;
+        }
+    }
+
+    public int howManyStudents()
+    {
+        return studentCount;
+    }
+    
+    public String getSummary()
+    {
+        if (studentCount == 0)
+        {
+            return "No students added";
+        }
+        
+        String summary = "";
+        for (int i = 0; i < studentCount; i++) {
+            summary += studentInitials[i] + ". " + studentSurnames[i] + "\n";
+        }
+        return summary;
+        
+        
+    }
 }
