@@ -69,7 +69,7 @@ public class Student
 	}
 	
 	public Module getModules(int i) {
-	    return new Module(moduleNames[i], moduleAverages[i]);
+	    return moduleNames[i] == null ? null : new Module(moduleNames[i], moduleAverages[i]);
 	}
 
 }

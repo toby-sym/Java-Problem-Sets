@@ -20,4 +20,8 @@ public class Module
 	{
 		return moduleAverage;
 	}
+	
+	public String toString() {
+	    return (moduleName + ": " + moduleAverage);
+	}
 }
