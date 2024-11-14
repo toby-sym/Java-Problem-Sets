@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
+import ProblemSet_6a.Ingredient.IngredientType;
+
 public class IngredientTest {
 
     @Test
