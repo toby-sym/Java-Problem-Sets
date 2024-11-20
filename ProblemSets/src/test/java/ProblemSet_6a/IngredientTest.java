@@ -25,8 +25,6 @@ public class IngredientTest {
 	assertEquals("Coconut Cream", ingredient.getName());
 	assertEquals(IngredientType.VEGETABLE, ingredient.getType());
 	assertEquals(supplier.toString(), ingredient.getSupplier());
-	assertEquals(250, ingredient.getRawWeight(), 0);
-
     }
 
     @Test

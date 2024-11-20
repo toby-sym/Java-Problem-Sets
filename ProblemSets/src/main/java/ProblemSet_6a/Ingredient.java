@@ -15,9 +15,9 @@ public class Ingredient
 		this.cookedWeight = cookedWeight;
 	}
 	
-	public int getCookedWeight()
+	public double getCookedWeight()
 	{
-		return cookedWeight;
+		return (cookedWeight * 0.8);
 	}
 	
     public IngredientType getType()
@@ -43,6 +43,6 @@ public class Ingredient
     
     public double getRawWeight()
     {
-    	return (cookedWeight / 0.8);
+    	return (cookedWeight * 0.8);
     }
 }

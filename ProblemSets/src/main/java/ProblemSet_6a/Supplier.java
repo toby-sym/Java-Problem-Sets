@@ -7,6 +7,8 @@ public class Supplier
 	
 	public Supplier(String supplierName, String phoneNumber)
 	{
+		phoneNumber = phoneNumber.replaceAll("[^\\d]", "");
+		
 		if (!phoneNumber.matches("^0\\d{10}$")) {
 		    throw new IllegalArgumentException("Phone number must start with '0' and be 11 digits long.");
 		}
@@ -21,6 +23,11 @@ public class Supplier
 	}
 	
 	public String getName()
+	{
+		return supplierName;
+	}
+	
+	public String toString()
 	{
 		return supplierName;
 	}
