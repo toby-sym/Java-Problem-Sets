@@ -1,31 +1,31 @@
 package ProblemSet_7a;
 
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 public class Module
 {
 	private String name;
-	private static final String nameValidationPattern = "[A-Z]{3}[0-9]{4}$";
+	private String nameValidation = "[C,O,M]{3}[0-9]{4}$";
 	
-    private Module(String name)
+	
+	
+    public Module(String name)
     {
-        this.name = name;
+        
+    	this.name = name;
     }
-	
-	public createModule(String Name)
+    
+	public String getName()
 	{
-		if (Pattern.matches(nameValidationPattern, name) == true)
+		System.out.println(name.matches(nameValidation));
+		
+		if (!name.matches(nameValidation))
 		{
-			return new Module(name);
+			return "Error";
 		}
 		else
 		{
-			return null;
+			return name;
 		}
-	}
-	
-	public String getName()
-	{
-		return name;
 	}
 }
