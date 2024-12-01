@@ -17,7 +17,7 @@ public class Ingredient
 	
 	public double getCookedWeight()
 	{
-		return (cookedWeight * 0.8);
+		return cookedWeight * 0.8;
 	}
 	
     public IngredientType getType()
@@ -37,6 +37,6 @@ public class Ingredient
     
     public double getRawWeight()
     {
-    	return (cookedWeight * 0.8);
+    	return (cookedWeight);
     }
 }
