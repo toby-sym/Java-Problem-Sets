@@ -24,12 +24,6 @@ public class Ingredient
     {
         return type;
     }
-	
-    public static enum IngredientType
-    {
-    	VEGETABLE,
-    	MEAT
-    }
     
     public String getName()
     {
