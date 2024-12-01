@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Student
 {
 	private String name;
-	private String nameValidation = "^[A-Z][a-z]+\\s[A-Z][a-z]+$";
+	private final String nameValidation = "^[A-Z][a-z]+\\s[A-Z][a-z]+$";
 	private String urn;
-	private String urnValidation = "^\\d{5}$";
+	private final String urnValidation = "^\\d{5}$";
 	private ArrayList<Module> moduleList;
 	
 	public Student(String name, String urn)
