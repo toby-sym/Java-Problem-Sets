@@ -13,7 +13,9 @@ public class Palette {
     public Palette(P_COLOUR[] primaryColours) {
         this.primaryColours = new ArrayList<>(Arrays.asList(primaryColours));
         if (primaryColours.length > 3) {
-            throw new IllegalArgumentException("Maximum of 3 Colours permitted in a Palette.");
+            throw new IllegalArgumentException(
+                "Maximum of 3 Colours permitted in a Palette."
+            );
         }
     }
 
@@ -22,7 +24,9 @@ public class Palette {
             if (primaryColours.size() < 3) {
                 primaryColours.add(colour);
             } else {
-                throw new IllegalStateException("Cannot add more than 3 primaryColours.");
+                throw new IllegalStateException(
+                    "Cannot add more than 3 primaryColours."
+                );
             }
         }
     }
@@ -82,8 +86,10 @@ public class Palette {
                 break;
             case 3:
                 return "BLACK";
+            default:
+                return "";
         }
-        return "";
+		return "";
     }
 
     public String display() {
