@@ -8,7 +8,9 @@ public class Supplier {
         phone = phone.replaceAll("[^\\d]", "");
 
         if (!phone.matches("^0\\d{10}$")) {
-            throw new IllegalArgumentException("Phone number must start with '0' and be 11 digits long.");
+            throw new IllegalArgumentException(
+                "Phone number must start with '0' and be 11 digits long."
+            );
         }
 
         this.name = name;
@@ -27,4 +29,4 @@ public class Supplier {
     public String toString() {
         return name;
     }
-} 
+}
