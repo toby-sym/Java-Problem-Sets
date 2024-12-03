@@ -26,7 +26,10 @@ public class StudentTracker {
         StringBuilder sb = new StringBuilder();
 
         for (Student student : studentList) {
-            sb.append(student.getName()).append("(").append(student.getUrn()).append(")\n");
+            sb.append(student.getName())
+              .append("(")
+              .append(student.getUrn())
+              .append(")\n");
         }
 
         return sb.toString();
