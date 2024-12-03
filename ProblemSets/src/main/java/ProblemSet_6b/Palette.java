@@ -3,48 +3,36 @@ package ProblemSet_6b;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Palette
-{
-	private ArrayList<P_COLOUR> colours;
-	private String i;
-	private boolean first;
-	
-	public Palette()
-	{
-		colours = new ArrayList<>();
-	}
-	
-	public Palette(P_COLOUR[] colours)
-	{
-		this.colours = new ArrayList<>(Arrays.asList(colours));
-	}
+public class Palette {
+    private ArrayList<P_COLOUR> primaryColours;
 
-	public void addColour(P_COLOUR colour)
-	{
-		if (colour != null)
-		{
-		colours.add(colour);
-		}
-	}
-	
-	public String getColours() {
+    public Palette() {
+        primaryColours = new ArrayList<>();
+    }
+
+    public Palette(P_COLOUR[] primaryColours) {
+        this.primaryColours = new ArrayList<>(Arrays.asList(primaryColours));
+    }
+
+    public void addColour(P_COLOUR colour) {
+        if (colour != null) {
+            primaryColours.add(colour);
+        }
+    }
+
+    public String getColours() {
         StringBuilder result = new StringBuilder();
-        first = true;
+        boolean first = true;
 
-        if (colours.isEmpty()) {
+        if (primaryColours.isEmpty()) {
             return "No colours added";
         }
 
-        for (P_COLOUR colour : colours)
-        {
-            if (colour != null)
-            {
-                if (!first)
-                {
+        for (P_COLOUR colour : primaryColours) {
+            if (colour != null) {
+                if (!first) {
                     result.append(", ");
-                }
-                else
-                {
+                } else {
                     first = false;
                 }
 
