@@ -1,7 +1,6 @@
-package ProblemSet_6a;    
+package ProblemSet_6a;
 
-public enum IngredientType
-    {
-    	VEGETABLE,
-    	MEAT
-    }
+public enum IngredientType {
+    VEGETABLE,
+    MEAT
+}
