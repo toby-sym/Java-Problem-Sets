@@ -3,60 +3,43 @@ package ProblemSet_6c;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Palette
-{
-    private ArrayList<P_COLOUR> colours;
-    private boolean first;
+public class Palette {
+    private ArrayList<P_COLOUR> primaryColours;
 
-    public Palette()
-    {
-        colours = new ArrayList<>();
+    public Palette() {
+        primaryColours = new ArrayList<>();
     }
 
-    public Palette(P_COLOUR[] colours)
-    {
-        this.colours = new ArrayList<>(Arrays.asList(colours));
-        if (colours.length > 3)
-        {
-        	throw new IllegalArgumentException("Maximum of 3 Colours permitted in a Palette.");
+    public Palette(P_COLOUR[] primaryColours) {
+        this.primaryColours = new ArrayList<>(Arrays.asList(primaryColours));
+        if (primaryColours.length > 3) {
+            throw new IllegalArgumentException("Maximum of 3 Colours permitted in a Palette.");
         }
     }
 
-    public void addColour(P_COLOUR colour)
-    {
-        if (colour != null)
-        {
-            if (colours.size() < 3)
-            {
-                colours.add(colour);
-            }
-            else
-            {
-                throw new IllegalStateException("Cannot add more than 3 colours.");
+    public void addColour(P_COLOUR colour) {
+        if (colour != null) {
+            if (primaryColours.size() < 3) {
+                primaryColours.add(colour);
+            } else {
+                throw new IllegalStateException("Cannot add more than 3 primaryColours.");
             }
         }
     }
 
-    public String getColours()
-    {
+    public String getColours() {
         StringBuilder result = new StringBuilder();
-        first = true;
+        boolean first = true;
 
-        if (colours.isEmpty())
-        {
-            return "No colours added";
+        if (primaryColours.isEmpty()) {
+            return "No primaryColours added";
         }
 
-        for (P_COLOUR colour : colours)
-        {
-            if (colour != null)
-            {
-                if (!first)
-                {
+        for (P_COLOUR colour : primaryColours) {
+            if (colour != null) {
+                if (!first) {
                     result.append(", ");
-                }
-                else
-                {
+                } else {
                     first = false;
                 }
 
@@ -68,14 +51,14 @@ public class Palette
     }
 
     public String mixColours() {
-        colours.removeIf(colour -> colour == null);
-        
-        switch (colours.size()) {
+        primaryColours.removeIf(colour -> colour == null);
+
+        switch (primaryColours.size()) {
             case 1:
-                return colours.get(0).name();
+                return primaryColours.get(0).name();
             case 2:
-                P_COLOUR first = colours.get(0);
-                P_COLOUR second = colours.get(1);
+                P_COLOUR first = primaryColours.get(0);
+                P_COLOUR second = primaryColours.get(1);
 
                 if (first == P_COLOUR.RED) {
                     if (second == P_COLOUR.YELLOW) {
@@ -103,10 +86,7 @@ public class Palette
         return "";
     }
 
-
-
-    public String display()
-    {
+    public String display() {
         StringBuilder displayString = new StringBuilder();
         displayString.append(getColours()).append(" = ").append(mixColours());
         return displayString.toString();
