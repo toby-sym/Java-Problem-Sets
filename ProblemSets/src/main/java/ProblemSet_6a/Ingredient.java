@@ -28,9 +28,8 @@ public class Ingredient {
     public String getSupplier() {
         return supplier.getName();
     }
-    
-    public double getRawWeight()
-    {
-    	return rawWeight;
+
+    public double getRawWeight() {
+        return rawWeight;
     }
 }
