@@ -6,7 +6,12 @@ public class Ingredient {
     private Supplier supplier;
     private double rawWeight;
 
-    public Ingredient(String name, IngredientType type, Supplier supplier, int rawWeight) {
+    public Ingredient(
+        String name,
+        IngredientType type,
+        Supplier supplier,
+        int rawWeight
+    ) {
         this.name = name;
         this.type = type;
         this.supplier = supplier;
