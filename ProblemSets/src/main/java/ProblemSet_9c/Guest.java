@@ -1,4 +1,4 @@
-package ProblemSet_9b;
+package ProblemSet_9c;
 
 import java.util.ArrayList;
 
@@ -39,18 +39,18 @@ public class Guest {
 	    return sum;
 	}
 	
-	public double calculateVATChargeAtRate(VATRate rate)
-	{
-	    int i = 0; 
+	public double calculateVATChargeAtRate(VATRate rate) {
 	    double sum = 0.0;
 
-	    for (i = 0; i < charges.size(); i++)
-	    {
-	        sum += charges.get(i).calculateVAT();
+	    for (Charge charge : charges) {
+	        if (charge.getService().getRate() == rate) {
+	            sum += charge.calculateVAT();
+	        }
 	    }
 
 	    return sum;
 	}
+
 
 	public ArrayList<Charge> getCharges()
 	{
@@ -76,6 +76,24 @@ public class Guest {
 	{
 		return telephone;
 	}
+
+	public double calculateTotalChargeIncVat()
+	{
+	    int i = 0; 
+	    double sum = 0.0;
+
+	    for (i = 0; i < charges.size(); i++)
+	    {
+	        sum += charges.get(i).calculateVAT() + charges.get(i).getCharge();
+	    }
+
+	    return sum;
+	}
 	
+	@Override
+	public String toString()
+	{
+		return (this.getForename() + " " + this.getSurname() + ", " + this.getAddress() + ", " + this.getTelephone());
+	}
 	
 }
