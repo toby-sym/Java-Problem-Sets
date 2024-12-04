@@ -15,7 +15,11 @@ public class PersonTracker {
     public String readTextFile(String filePath) {
         StringBuilder result = new StringBuilder();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (
+            BufferedReader reader = new BufferedReader(
+                new FileReader(filePath)
+            )
+        ) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(" ");

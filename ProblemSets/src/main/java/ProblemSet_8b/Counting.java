@@ -13,7 +13,11 @@ public class Counting {
         int linesRead = 0;
         StringBuilder result = new StringBuilder();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (
+            BufferedReader reader = new BufferedReader(
+                new FileReader(filePath)
+            )
+        ) {
             String line;
             while ((line = reader.readLine()) != null) {
                 linesRead++;
