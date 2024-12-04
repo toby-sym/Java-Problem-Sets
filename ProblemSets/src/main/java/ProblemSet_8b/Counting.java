@@ -4,22 +4,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Counting
-{
-	private int linesRead = 0;
-	
-	
-	public Counting()
-	{
-	}
+public class Counting {
 
-	public String readTextFile(String filePath) {
+    public Counting() {
+    }
+
+    public String readTextFile(String filePath) {
+        int linesRead = 0;
         StringBuilder result = new StringBuilder();
-        
+
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-            	linesRead++;
+                linesRead++;
                 result.append(displayLine(line, linesRead));
             }
         } catch (IOException e) {
