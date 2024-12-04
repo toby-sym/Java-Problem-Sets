@@ -5,18 +5,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class PersonTracker
-{
+public class PersonTracker {
     private ArrayList<Person> peopleList;
 
-    public PersonTracker()
-    {
+    public PersonTracker() {
         peopleList = new ArrayList<>();
     }
 
     public String readTextFile(String filePath) {
         StringBuilder result = new StringBuilder();
-        
+
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -24,44 +22,45 @@ public class PersonTracker
                 String forename = parts[0];
                 String surname = parts[1];
                 int age = Integer.parseInt(parts[2]);
-                
+
                 addPerson(forename, surname, age);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return result.toString();
     }
 
-    public void addPerson(String forename, String surname, int age)
-    {
+    public void addPerson(String forename, String surname, int age) {
         Person person = new Person(forename, surname, age);
         peopleList.add(person);
     }
 
-    public String displayList()
-    {
+    public String displayList() {
         StringBuilder result = new StringBuilder();
-        for (Person person : peopleList)
-        {
-            result.append(person.getForename() + " " + person.getSurname() + " (" + person.getAge() + ")\n");
+        for (Person person : peopleList) {
+            result.append(person.getForename())
+                  .append(" ")
+                  .append(person.getSurname())
+                  .append(" (")
+                  .append(person.getAge())
+                  .append(")\n");
         }
         return result.toString();
     }
-    
-    public String getPeopleList()
-    {
+
+    public String getPeopleList() {
         StringBuilder result = new StringBuilder();
-        
-        if (peopleList.size() == 0)
-        {
+
+        if (peopleList.isEmpty()) {
             return "[]";
         }
-        
-        for (int i = 0; i < peopleList.size(); i++)
-        {
-            result.append("[" + peopleList.get(i) + "]");
+
+        for (int i = 0; i < peopleList.size(); i++) {
+            result.append("[").append(peopleList.get(i)).append("]");
         }
+
         return result.toString();
     }
 }
