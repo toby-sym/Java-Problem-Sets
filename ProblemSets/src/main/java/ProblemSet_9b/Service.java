@@ -8,7 +8,7 @@ public class Service {
     private final String codeValidation = "^[A-Z]{4}\\d{5}$";
 
     public Service(String code, String name, VATRate rate) {
-        if (name == null || !code.matches(codeValidation)) { // Fix null check
+        if (name == null || !code.matches(codeValidation)) {
             throw new IllegalArgumentException("Invalid Code Syntax");
         }
 

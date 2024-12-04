@@ -1,5 +1,7 @@
 package ProblemSet_9a;
 
+import ProblemSet_9b.Service;
+
 public class Charge {
     private Service service;
     private double charge;
@@ -28,8 +30,9 @@ public class Charge {
             case LOW:
                 return (this.charge * 0.05);
             case ZERO:
-                return (this.charge);
+                return this.charge;
+            default:
+                return this.charge;
         }
-        return (this.charge);
     }
 }

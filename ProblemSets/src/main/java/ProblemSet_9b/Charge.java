@@ -30,7 +30,7 @@ public class Charge {
             case ZERO:
                 return this.charge;
             default:
-                return this.charge; // Adding default case for completeness
+                return this.charge;
         }
     }
 }
