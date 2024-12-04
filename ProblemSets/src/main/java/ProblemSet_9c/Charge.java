@@ -5,10 +5,9 @@ public class Charge {
     private double charge;
 
     public Charge(Service service, double charge) {
-        if (charge < 0 || charge == 0) {
+        if (charge <= 0) {
             throw new IllegalArgumentException("Invalid Charge");
         }
-
         this.service = service;
         this.charge = charge;
     }
@@ -24,13 +23,13 @@ public class Charge {
     public double calculateVAT() {
         switch (service.getRate()) {
             case STANDARD:
-                return (this.charge * 0.2);
+                return charge * 0.2;
             case LOW:
-                return (this.charge * 0.05);
+                return charge * 0.05;
             case ZERO:
-                return this.charge;
+                return charge;
             default:
-                return this.charge;
+                return charge;
         }
     }
 }
