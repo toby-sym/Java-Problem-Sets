@@ -9,7 +9,7 @@ public class Guest implements IGuest {
     private String telephone;
     private ArrayList<Charge> charges;
 
-    public Guest(String forename, String surname, String address, 
+    public Guest(String forename, String surname, String address,
                  String telephone) {
         this.forename = forename;
         this.surname = surname;
