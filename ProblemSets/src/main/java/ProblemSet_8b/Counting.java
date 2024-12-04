@@ -17,7 +17,9 @@ public class Counting {
             String line;
             while ((line = reader.readLine()) != null) {
                 linesRead++;
-                result.append(displayLine(line, linesRead));
+                result.append(
+                    displayLine(line, linesRead)
+                );
             }
         } catch (IOException e) {
             e.printStackTrace();
