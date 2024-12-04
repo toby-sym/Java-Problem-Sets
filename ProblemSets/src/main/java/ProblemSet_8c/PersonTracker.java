@@ -57,8 +57,10 @@ public class PersonTracker {
             return "[]";
         }
 
-        for (int i = 0; i < peopleList.size(); i++) {
-            result.append("[").append(peopleList.get(i)).append("]");
+        for (Person person : peopleList) {
+            result.append("[")
+                  .append(person)
+                  .append("]");
         }
 
         return result.toString();
