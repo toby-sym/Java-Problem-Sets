@@ -27,6 +27,7 @@ To begin exploring and running the exercises:
 2. Open the desired Java file in your preferred IDE or text editor.
 
 3. Compile and run the Java file:
+   ```bash
    javac ProblemSets/ProblemName.java
    java ProblemSets.ProblemName
 
